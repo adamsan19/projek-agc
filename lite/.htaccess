@@ -1,0 +1,25 @@
+# ============================================
+# Disable Directory Listing for lite folder
+# ============================================
+Options -Indexes
+
+# ============================================
+# Deny access to directory listing
+# ============================================
+<IfModule mod_autoindex.c>
+    Options -Indexes
+</IfModule>
+
+# ============================================
+# Deny access to sensitive files
+# ============================================
+<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|sql|bak|backup)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+
+
+
+
+
